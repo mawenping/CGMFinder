@@ -28,7 +28,7 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/alcoholwine/CGMFinder"
+Homepage = "https://github.com/mawenping/CGMFinder"
 
 [project.scripts]
 cgmfinder = "cgmfinder.cgmfinder:main"

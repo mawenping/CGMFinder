@@ -2,6 +2,8 @@
 
 Correlated gene module identification from scRNA-seq data.
 
+GitHub: https://github.com/mawenping/CGMFinder
+
 ## Requirements
 
 - Python >= 3.12
@@ -133,3 +135,10 @@ python analysis/module_clustering.py
 ## License
 
 MIT
+
+## Citation
+
+If you use CGMFinder in your work, please cite:
+
+> Ma W, et al. CGMFinder: Correlated Gene Module Identification from
+> Single-Cell RNA-seq Data. (2025)
