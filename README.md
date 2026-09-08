@@ -6,41 +6,24 @@ GitHub: https://github.com/mawenping/CGMFinder
 
 ## Requirements
 
-- Python >= 3.12
+- Python >= 3.10
 
 ## Installation
 
 ```bash
 # Step 1: create conda environment
-conda create -n cgmfinder python=3.12
+conda create -n cgmfinder python=3.10
 conda activate cgmfinder
 
-# Step 2: install locked dependencies (exact versions for reproducibility)
-pip install -r requirements_locked.txt
-
-# Step 3: install CGMFinder
+# Step 2: install CGMFinder (dependencies are resolved automatically)
 pip install -e .
 ```
-
-If you do not need exact reproducibility, simply run `pip install -e .` after creating the environment.
-The results will be biologically equivalent but may differ slightly due to BLAS library differences.
 
 ### Quick check
 
 ```bash
 cgmfinder --help
 ```
-
-## BLAS dependency
-
-The Pearson correlation matrix is computed via `numpy.corrcoef()`, which relies on the BLAS library
-(Basic Linear Algebra Subprograms) for matrix operations. Different BLAS implementations
-(e.g., OpenBLAS vs MKL) or different BLAS versions can produce results that differ at the
-machine-precision level (≈ 1 × 10⁻¹⁵). While individually negligible, these tiny differences can
-accumulate and affect the final edge-binning results.
-
-This is a known property of numerical computing and is not a bug in CGMFinder. To reproduce
-bit-identical results, use the exact same environment (see `requirements_locked.txt`).
 
 ## Usage
 

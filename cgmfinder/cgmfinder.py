@@ -77,17 +77,27 @@ def ercc_correction(
     sc.tl.score_genes_cell_cycle(edata, s_genes=s_genes, g2m_genes=g2m_genes)
 
     if ercc_genes:
-        g1_cells = list(edata.obs[edata.obs.phase == "G1"].index)
         g1_mean = np.mean(
             edata[edata.obs["phase"] == "G1", ercc_genes].X.sum(axis=1)
         ).item()
         sg2_mean = np.mean(
             edata[edata.obs["phase"] != "G1", ercc_genes].X.sum(axis=1)
         ).item()
-        if g1_mean > 0:
-            edata[g1_cells, ercc_genes].X = (
-                edata[g1_cells, ercc_genes].X * (sg2_mean / g1_mean)
-            )
+        if g1_mean > 0 and sg2_mean > 0:
+            # Scale G1 ERCC counts directly on the underlying .X array.
+            # Do not assign to the .X of an AnnData view: anndata >= 0.13
+            # "initializes view as actual" on view .X writes, which changed
+            # the resulting edge-binning (anndata 0.12 -> 0.13 comparison).
+            g1_idx = np.flatnonzero((edata.obs["phase"] == "G1").values)
+            ercc_idx = edata.var_names.get_indexer(ercc_genes)
+            scale = sg2_mean / g1_mean
+            ix = np.ix_(g1_idx, ercc_idx)
+            if hasattr(edata.X, "toarray"):
+                X = edata.X.tocsr().tolil()
+                X[ix] = X[ix] * scale
+                edata.X = X.tocsr()
+            else:
+                edata.X[ix] = edata.X[ix] * scale
     return edata
 
 

@@ -1,5 +1,4 @@
 # CGMFinder - minimum version requirements
-# For exact reproducible versions, use requirements_locked.txt
 
 scanpy>=1.9
 anndata>=0.9
