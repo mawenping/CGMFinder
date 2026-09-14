@@ -1,4 +1,4 @@
-<p align="center">
+<p align="left">
   <img src="docs/cgmfinder_logo.png" alt="CGMFinder logo" width="220">
 </p>
 
