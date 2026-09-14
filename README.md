@@ -6,7 +6,9 @@
 
 CGMFinder: a graph-based framework for cell-type-specific correlated gene module identification in scRNA-seq data.
 
-GitHub: https://github.com/mawenping/CGMFinder
+<p align="left">
+  <img src="docs/fig1.png" alt="CGMFinder workflow" width="900">
+</p>
 
 ## Requirements
 
