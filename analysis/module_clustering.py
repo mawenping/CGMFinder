@@ -23,7 +23,7 @@ f_name = "input_name_0.005_4_300_2.0_0.3_0.1"  # output filename prefix
 # ============================================================
 # 1. Load module distance matrix
 # ============================================================
- dis = pd.read_feather(os.path.join(md_dir, f"{f_name}.dismtx.feather"))
+dis = pd.read_feather(os.path.join(md_dir, f"{f_name}.dismtx.feather"))
 print(f"Module distance matrix: {dis.shape[0]} modules")
 
 # ============================================================
