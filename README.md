@@ -123,5 +123,6 @@ MIT
 
 If you use CGMFinder in your work, please cite:
 
-> Ma W, et al. CGMFinder: Correlated Gene Module Identification from
-> Single-Cell RNA-seq Data. (2025)
+> Ma W, Xie XS. CGMFinder Identifies Correlated Gene Modules from
+> 3H scRNA-seq Data. *bioRxiv* (2024).
+> doi: [10.1101/2024.11.29.624642](https://doi.org/10.1101/2024.11.29.624642)
