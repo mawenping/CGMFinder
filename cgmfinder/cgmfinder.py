@@ -720,7 +720,7 @@ def run_analysis(
     triangle_confirmation_fraction: float = 0.3,
     min_cell_fraction: float = 0.1,
     cpu_cores: int = 1,
-    ercc_correction: bool = True,
+    ercc_correction: bool = False,
 ) -> None:
     """Run the full CGMFinder pipeline.
 
@@ -912,8 +912,8 @@ def main() -> None:
         help="Number of CPU cores to use (default: 1)",
     )
     parser.add_argument(
-        "--ercc_correction", type=bool, default=True,
-        help="Perform ERCC spike-in correction when ERCC genes are found (default: True)",
+        "--ercc_correction", type=bool, default=False,
+        help="Perform ERCC spike-in correction when ERCC genes are found (default: False)",
     )
 
     args = parser.parse_args()

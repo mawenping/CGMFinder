@@ -42,7 +42,7 @@ cgmfinder input_name.feather output_dir/ --cpu_cores 5
 | `--triangle_confirmation_fraction` | `0.3` | Minimum fraction of connections a gene must maintain to members of a candidate module in the triangle network to confirm assignment. |
 | `--min_cell_fraction` | `0.1` | Minimum fraction of cells in which a gene must be detected to be retained. Controls the number of genes entering network construction. |
 | `--cpu_cores` | `1` | Number of CPU cores (recommended ≤ 5). More cores do not improve performance. |
-| `--ercc_correction` | `True` | Perform ERCC spike-in correction when ERCC genes are found. Set to `False` to skip (e.g. for toy data without ERCC). |
+| `--ercc_correction` | `False` | Perform ERCC spike-in correction when ERCC genes are found. Set to `True` to enable (default off for data without ERCC spike-ins). |
 
 ### Input format
 
