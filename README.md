@@ -1,6 +1,10 @@
+<p align="center">
+  <img src="docs/cgmfinder_logo.png" alt="CGMFinder logo" width="220">
+</p>
+
 # CGMFinder
 
-Correlated gene module identification from scRNA-seq data.
+CGMFinder: a graph-based framework for cell-type-specific correlated gene module identification in scRNA-seq data.
 
 GitHub: https://github.com/mawenping/CGMFinder
 
